@@ -1,4 +1,7 @@
 node {
+   
+    stage 'cleaning workspace'
+ sh'rm -rf *'
    // Mark the code checkout 'stage'....
    stage 'Checkout'
 
@@ -12,7 +15,6 @@ node {
     stage 'Run docker container'
     docker.image('javawebstart').run('-d-p 80:80')
  
- stage 'cleaning workspace'
- sh'rm -rf *'
+
  
 }
